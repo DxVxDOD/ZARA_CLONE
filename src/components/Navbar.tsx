@@ -11,7 +11,7 @@ import KidsSeaction from './KidsSeaction';
 const Navbar = () => {
 	const [category, setCategory] = useState('');
 	return (
-		<nav className='flex flex-col h-screen overflow-y-scroll text-xs bg-stone-100 text-stone-900 lg:w-2/5 scrollbar' >
+		<nav className='flex flex-col h-screen overflow-y-scroll text-xs bg-stone-100 text-stone-900 lg:w-2/5 xl:w-1/4 scrollbar' >
 			<button className='p-6' >
 				<XSVG/>
 			</button>
