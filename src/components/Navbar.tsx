@@ -11,11 +11,11 @@ import KidsSeaction from './KidsSeaction';
 const Navbar = () => {
 	const [category, setCategory] = useState('');
 	return (
-		<nav className='flex flex-col h-screen text-xs bg-stone-100 text-stone-900 lg:w-2/5' >
+		<nav className='flex flex-col h-screen overflow-y-scroll text-xs bg-stone-100 text-stone-900 lg:w-2/5 scrollbar' >
 			<button className='p-6' >
 				<XSVG/>
 			</button>
-			<div className='flex justify-between p-6'>
+			<nav className='flex justify-between p-6'>
 				<button onClick={() => {
 					setCategory('women');
 				}} >WOMEN</button>
@@ -28,13 +28,9 @@ const Navbar = () => {
 				<button onClick={() => {
 					setCategory('home');
 				}} >HOME</button>
-				<button onClick={() => {
-					setCategory('beauty');
-				}} >BEAUTY</button>
-				<button onClick={() => {
-					setCategory('preOwned');
-				}} >ZARA PRE-OWNED</button>
-			</div>
+				<Link href='/Categories/Beauty' >BEAUTY</Link>
+				<Link href='/Categories/ZaraPreOwned' >ZARA PRE-OWNED</Link>
+			</nav>
 			<div>
 				{category === 'women' ? <WomenSection/> : null}
 				{category === 'men' ? <MenSection/> : null}
@@ -43,6 +39,7 @@ const Navbar = () => {
 				{category === 'beauty' ? <BeautySection/> : null}
 				{category === 'preOwned' ? <PreOwnedSection/> : null}
 			</div>
+			<Link href={''} className='px-6 pb-6' >+ INFO</Link>
 		</nav>
 	);
 };
