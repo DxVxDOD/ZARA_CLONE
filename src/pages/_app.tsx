@@ -1,9 +1,9 @@
 import React from 'react';
 import '@/styles/globals.css';
 import type {AppProps} from 'next/app';
-import {IBM_Plex_Mono} from 'next/font/google';
+import {Open_Sans} from 'next/font/google';
 
-const ibmFont = IBM_Plex_Mono({subsets: ['latin'], weight: ['100']});
+const ibmFont = Open_Sans({subsets: ['latin'], weight: ['400']});
 
 export default function App({Component, pageProps}: AppProps) {
 	return (
