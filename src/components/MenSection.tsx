@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 const MenSection = () => (
-	<nav className='flex flex-col gap-4 p-6' >
+	<nav className='flex flex-col gap-4 p-6 w-max' >
 		<Link href='/Categories/Men/New' >NEW</Link>
 		<Link href='/Categories/Men/ZaraOrigins' >ZARA ORIGINS</Link>
 		<Link href='/Categories/Men/ZaraAthleticz' ><b>ZARA ATHLETICZ</b></Link>
@@ -25,7 +25,7 @@ const MenSection = () => (
 		<Link href='/Categories/Men/Bags' >B A G S | B A G P A C K S</Link>
 		<Link href='/Categories/Men/Accessories' >ACCESSORIES</Link>
 		<Link href='/Categories/Men/Perfumes' >PERFUMES</Link>
-		<Link href='/Categories/Men/Home' >HOME</Link>
+		<button className='w-max' >HOME</button>
 		<Link href='/Categories/Men/Beauty' >BEAUTY</Link>
 		<Link href='/Categories/Men/SpecialPrices' className='text-pink-400' ><i>SPECIAL PRICES</i></Link>
 		<Link href='/Categories/Men/SpecialEdition' >S P E C I A L  E D I T I O N</Link>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 
 const WomenSection = () => (
-	<nav className='flex flex-col gap-4 p-6' >
+	<nav className='flex flex-col gap-4 p-6 w-max' >
 		<Link href='/Categories/Women/New' >NEW</Link>
 		<Link href='/Categories/Women/DressTime' >DRESS TIME</Link>
 		<Link href='/Categories/Women/SpringMustHaves' >SPRING MUST HAVES</Link>
@@ -31,6 +31,7 @@ const WomenSection = () => (
 		<Link href='/Categories/Women/CoOrdSets' >CO-ORD SETS</Link>
 		<Link href='/Categories/Women/Suits' >SUITS</Link>
 		<Link href='/Categories/Women/SpecialPrices' className='text-pink-400 ' ><i>SPECIAL PRICES</i></Link>
+		<button className='w-max' >HOME</button>
 		<Link href='/Categories/Women/SpecialEdition' >S P E C I A L  E D I T I O N</Link>
 		<Link href='' >GIFT CARD</Link>
 		<Link href='' className='py-4' >JOIN LIFE</Link>
