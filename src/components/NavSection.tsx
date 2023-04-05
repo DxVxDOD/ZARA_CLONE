@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useMemo, useLayoutEffect, useCallback} from 'react';
+import React, {useEffect, useState} from 'react';
 import XSVG from '../../public/x-thin-svgrepo-com.svg';
 import WomenSection from './WomenSection';
 import MenSection from './MenSection';
@@ -7,28 +7,15 @@ import PreOwnedSection from './PreOwnedSection';
 import BeautySection from './BeautySection';
 import KidsSeaction from './KidsSeaction';
 import Link from 'next/link';
-import {gsap} from 'gsap';
 
 const NavSection = ({handleTransition}: {handleTransition: (boolean: boolean) => void}) => {
 	const [category, setCategory] = useState('women');
-
 	const handleTransitionChild = (): void => {
 		handleTransition(false);
-		handleClose();
 	};
 
-	const handleClose = useCallback(() => {
-		const timeline = gsap.timeline({
-			paused: true,
-			defaults: {duration: 1.5},
-		}).fromTo('.closeNav', {opacity: 1}, {opacity: 0, ease: 'sine'});
-
-		const toggleTransition = () => timeline.restart();
-		toggleTransition();
-	}, []);
-
 	return (
-		<nav className='flex flex-col h-screen overflow-y-scroll text-xs closeNav bg-stone-100 text-stone-900 lg:w-2/5 xl:w-1/4 scrollbar'>
+		<nav className='flex flex-col h-screen overflow-y-scroll text-xs navbarFadeIn bg-stone-100 text-stone-900 lg:w-2/5 xl:w-1/4 scrollbar'>
 			<button onClick={handleTransitionChild} className='p-6 w-max' >
 				<XSVG/>
 			</button>

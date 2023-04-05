@@ -1,10 +1,15 @@
-import React, {useState, useRef, useEffect, useMemo} from 'react';
+import React, {useState} from 'react';
 import HamburgerSVG from '../../public/menu-hamburger-svgrepo-com.svg';
 import NavSection from './NavSection';
-import {gsap} from 'gsap';
 
 const Navbar = () => {
-	const [isToggeled, setIsToggeled] = useState(false);
+	const [isToggeled, setIsToggeled] = useState(true);
+	const fadeIn = {
+		animation: 'fade-in 1250ms forwards',
+	};
+	const fadeOut = {
+		animation: 'fade-out 1250ms forwards',
+	};
 
 	const handleTransition = (): void => {
 		if (isToggeled) {
@@ -14,28 +19,18 @@ const Navbar = () => {
 		}
 	};
 
-	useEffect(() => {
-		const timeline = gsap.timeline({
-			paused: true,
-			defaults: {duration: 1.5},
-		}).fromTo('.openNav', {opacity: 0}, {opacity: 1, ease: 'sine'});
-
-		const toggleTransition = () => timeline.restart();
-
-		toggleTransition();
-	}, [handleTransition]);
-
 	return (
-		<div>
-			{isToggeled
-				? <div className='openNav' >
-					<NavSection
-						handleTransition={handleTransition}/>
-				</div>
-				: <button
-					className='p-6 openNav'
-					onClick={handleTransition}><HamburgerSVG/></button>}
-		</div>
+		<>
+			<button
+				style={isToggeled ? fadeIn : fadeOut}
+				className='absolute p-6 buttonFadeIn'
+				onClick={handleTransition}><HamburgerSVG/>
+			</button>
+			<div style={isToggeled ? fadeOut : fadeIn}>
+				<NavSection
+					handleTransition={handleTransition}/>
+			</div>
+		</>
 	);
 };
 
