@@ -6,7 +6,7 @@ const Navbar = () => {
 	const [isToggeled, setIsToggeled] = useState(false);
 	const [showNavbar, setShowNavbar] = useState(false);
 	const fadeIn = {
-		animation: 'fade-in 2000ms forwards',
+		animation: 'fade-in 1000ms forwards',
 	};
 	const fadeOut = {
 		animation: 'fade-out 1000ms forwards',
