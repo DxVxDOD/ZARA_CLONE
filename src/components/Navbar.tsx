@@ -1,14 +1,15 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import HamburgerSVG from '../../public/menu-hamburger-svgrepo-com.svg';
 import NavSection from './NavSection';
 
 const Navbar = () => {
-	const [isToggeled, setIsToggeled] = useState(true);
+	const [isToggeled, setIsToggeled] = useState(false);
+	const [showNavbar, setShowNavbar] = useState(false);
 	const fadeIn = {
-		animation: 'fade-in 1250ms forwards',
+		animation: 'fade-in 2000ms forwards',
 	};
 	const fadeOut = {
-		animation: 'fade-out 1250ms forwards',
+		animation: 'fade-out 1000ms forwards',
 	};
 
 	const handleTransition = (): void => {
@@ -22,11 +23,11 @@ const Navbar = () => {
 	return (
 		<>
 			<button
-				style={isToggeled ? fadeIn : fadeOut}
+				style={isToggeled ? fadeOut : fadeIn}
 				className='absolute p-6 buttonFadeIn'
 				onClick={handleTransition}><HamburgerSVG/>
 			</button>
-			<div style={isToggeled ? fadeOut : fadeIn}>
+			<div style={isToggeled ? fadeIn : fadeOut}>
 				<NavSection
 					handleTransition={handleTransition}/>
 			</div>

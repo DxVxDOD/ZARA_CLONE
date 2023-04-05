@@ -15,7 +15,7 @@ const NavSection = ({handleTransition}: {handleTransition: (boolean: boolean) =>
 	};
 
 	return (
-		<nav className='flex flex-col h-screen overflow-y-scroll text-xs navbarFadeIn bg-stone-100 text-stone-900 lg:w-2/5 xl:w-1/4 scrollbar'>
+		<nav className='flex flex-col h-screen overflow-y-scroll text-xs bg-stone-100 text-stone-900 lg:w-2/5 xl:w-1/4 scrollbar'>
 			<button onClick={handleTransitionChild} className='p-6 w-max' >
 				<XSVG/>
 			</button>
